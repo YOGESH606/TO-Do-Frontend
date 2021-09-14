@@ -1,11 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useState,useEffect } from 'react';
-import axios from 'axios';
 import { useDispatch,useSelector } from 'react-redux';
 import { createTask,editTask,deleteTask } from '../actions/tasks';
 
-const API = axios.create({ baseURL: 'http://localhost:5000' });
 
 const Modal = ({ modal, handleModal, id, setId }) => {
     const [data, setData] = useState({ title: '', description: '', type: '' });
@@ -14,13 +12,13 @@ const Modal = ({ modal, handleModal, id, setId }) => {
 
     const handlesubmit = async () => {
         if(id){
-            console.log("edit task called")
+           // console.log("edit task called")
             dispatch(editTask(task._id,data));
             setId(null);
             setData({ title: '', description: '', type: '' });
         }
         else{
-            console.log("cretetask task called")
+           // console.log("cretetask task called")
             dispatch(createTask(data));
             setId(null);
             setData({ title: '', description: '', type: '' });

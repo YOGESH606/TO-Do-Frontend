@@ -1,9 +1,5 @@
 import { ActionTypes } from "../constants/action.types";
 
-const intialState = {
-    tasks: [],
-}
-
 export const tasksReducer = (tasks = [], { type, payload }) => {
     switch (type) {
         case ActionTypes.GET_TASKS:

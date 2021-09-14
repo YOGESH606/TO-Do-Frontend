@@ -16,7 +16,7 @@ export const createTask = (data) => async (dispatch) => {
     try {
         const res = await api.createTask(data);
          dispatch({type:ActionTypes.CREATE_TASK,payload:res.data})
-        console.log(res.data);
+       // console.log(res.data);
 
     }
     catch (error) {
@@ -35,7 +35,6 @@ export const editTask = (id, updatedTask) => async (dispatch) => {
 }
 export const deleteTask = (id) => async (dispatch) => {
     try {
-        const res = await api.deleteTask(id);
         dispatch({ type: ActionTypes.DELETE_TASK, payload:id });
        // console.log("deleteTask  action and dispached delete to reducer",id);
     }
